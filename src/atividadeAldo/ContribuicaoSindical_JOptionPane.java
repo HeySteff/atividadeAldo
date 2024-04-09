@@ -2,7 +2,7 @@ package atividadeAldo;
 
 	import javax.swing.JOptionPane;
 
-public class ContribuicaoSindical {
+public class ContribuicaoSindical_JOptionPane {
 
 	public static void main(String[] args) {
 			
