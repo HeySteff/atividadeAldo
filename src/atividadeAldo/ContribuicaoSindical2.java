@@ -38,5 +38,7 @@ public class ContribuicaoSindical2 {
 
         System.out.println("Valor da contribuição sindical: R$" + String.format("%.2f", valorContribuicaoSindical));
         System.out.println("Salário líquido: R$" + String.format("%.2f", salarioLiquido));
+        
+        scanner.close();
     }
 }
