@@ -8,7 +8,7 @@ public class ContribuicaoSindical2 {
 		
         Scanner scanner = new Scanner(System.in);
 
-        final double salarioMinimo = 1212.00;
+        final double SALARIOMINIMO = 1412.00;
 
         double salarioBruto = 0.0;
         int tipoContribuicao = -1;
@@ -16,10 +16,10 @@ public class ContribuicaoSindical2 {
         do {
             System.out.print("Digite seu salário bruto: ");
             salarioBruto = scanner.nextDouble();
-            if (salarioBruto < salarioMinimo) {
-                System.err.println("Salário bruto inválido! Deve ser igual ou superior ao salário mínimo (" + salarioMinimo + ").");
+            if (salarioBruto < SALARIOMINIMO) {
+                System.err.println("Salário bruto inválido! Deve ser igual ou superior ao salário mínimo (" + SALARIOMINIMO + ").");
             }
-        } while (salarioBruto < salarioMinimo);
+        } while (salarioBruto < SALARIOMINIMO);
 
         do {
             System.out.print("Digite o tipo de contribuição sindical (0 - não contribuinte, 1 - contribuinte): ");
@@ -29,13 +29,14 @@ public class ContribuicaoSindical2 {
             }
         } while (tipoContribuicao != 0 && tipoContribuicao != 1);
 
-        double valorContribuicaoSindical = 0.0;
+        double valorContribuicaoSindical = 0;
         if (tipoContribuicao == 1) {
             valorContribuicaoSindical = salarioBruto / 30.0;
         }
 
         double salarioLiquido = salarioBruto - valorContribuicaoSindical;
 
+       
         System.out.println("Valor da contribuição sindical: R$" + String.format("%.2f", valorContribuicaoSindical));
         System.out.println("Salário líquido: R$" + String.format("%.2f", salarioLiquido));
         

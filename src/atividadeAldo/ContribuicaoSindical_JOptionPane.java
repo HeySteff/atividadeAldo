@@ -42,8 +42,8 @@ public class ContribuicaoSindical_JOptionPane {
 		// Calculando a contribuição sindical
 		double valorContriSindical = 0.0;
 		if (tipoContribuicao == 1) {
-		    double taxaContribuicaoSindical = 0.01; // Informando a taxa de contribuição sindical correta para a categoria do funcionário
-		    valorContriSindical = salarioBruto * taxaContribuicaoSindical;
+		    double taxaContribuicaoSindical = 30; // Informando a taxa de contribuição sindical correta para a categoria do funcionário
+		    valorContriSindical = salarioBruto / taxaContribuicaoSindical;
 		   } 
 		
 			double valorLiquido = salarioBruto - valorContriSindical;		   
