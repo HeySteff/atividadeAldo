@@ -2,7 +2,7 @@ package atividadeAldo;
 
 	import java.util.Scanner;
 
-public class Qtd_Masculino_Feminino {
+public class Qtd_Sexo_Masculino_Feminino {
 
 	public static void main(String[] args) {
 		
