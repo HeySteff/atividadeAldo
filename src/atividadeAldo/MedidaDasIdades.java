@@ -2,7 +2,7 @@ package atividadeAldo;
 
 import java.util.Scanner;
 
-public class MédiaIdade {
+public class MedidaDasIdades {
 
 	public static void main(String[] args) {
 
