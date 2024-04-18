@@ -7,17 +7,17 @@ public class Consumo_de_energia {
 	public static void main(String[] args) {
         Scanner sc = new Scanner (System.in);
 
-        // Variáveis para contagem de imóveis
+        // Variaveis para contagem de imóveis
         int contaResidencial = 0;
         int contaComercial = 0;
         int contaIndustrial = 0;
 
-        // Variáveis para totalização das contas
+        // Variaveis para totalização das contas
         double totalResidencial = 0;
         double totalComercial = 0;
         double totalIndustrial = 0;
 
-        // Variáveis para cada imóvel
+        // Variaveis para cada imóvel
         String tipoImovel;
         double vlrAnterior;
         double vlrAtual;
@@ -25,13 +25,13 @@ public class Consumo_de_energia {
         double vlrConta;
         double vlrKWh = 0;
 
-        // Loop para processar os 4 imóveis
+        // Looping para processar os 4 imóveis
         for (int i = 1; i <= 4; i++) {
             System.out.println("\n== Imóvel " + i + " ==");
 
-            // Tipo do imóvel
+            // Tipos do imoveis
             do {
-                System.out.print("Tipo do imóvel (R/C/I): ");
+                System.out.print("Tipo do imóvel (R para Residencial - C para Comercial - I para Industrial): ");
                 tipoImovel = sc.nextLine().toUpperCase();
             } while (!tipoImovel.equals("R") && !tipoImovel.equals("C") && !tipoImovel.equals("I"));
 
@@ -50,7 +50,7 @@ public class Consumo_de_energia {
             // Cálculo do consumo de energia
             consumoEnergia = vlrAtual - vlrAnterior;
 
-            // Cálculo do valor da conta de energia
+// 			   Cálculo do valor da conta de energia
 //            switch (tipoImovel) {
 //                case "R":
 //                    vlrKWh = 0.50;
@@ -83,7 +83,7 @@ public class Consumo_de_energia {
             System.out.println("Consumo de energia: " + consumoEnergia + " kWh");
             System.out.println("Valor da conta: R$ " + String.format("%.2f", vlrConta));
 
-            // Atualizar as variáveis de contagem e totalização
+            // Atualizar as Variaveis de contagem e totalização
             switch (tipoImovel) {
                 case "R":
                     contaResidencial++;
@@ -97,8 +97,10 @@ public class Consumo_de_energia {
                     contaIndustrial++;
                     totalIndustrial += vlrConta;
                     break;
+
             }
-        }
+            }
+        
         // Exibir o resumo final
         System.out.println("\n== Resumo Final ==");
         System.out.println("Residencial: " + contaResidencial + " imóveis - R$ " + String.format("%.2f", totalResidencial));
