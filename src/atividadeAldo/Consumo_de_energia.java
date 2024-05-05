@@ -97,8 +97,17 @@ public class Consumo_de_energia {
                     contaIndustrial++;
                     totalIndustrial += vlrConta;
                     break;
-
             }
+//            if (tipoImovel == "R") {
+//            	contaResidencial++;
+//            	totalResidencial += vlrConta;
+//            } else if (tipoImovel == "C") {
+//            	contaComercial++;
+//            	totalComercial += vlrConta;
+//            } else if (tipoImovel == "I") {
+//            	contaIndustrial++;
+//            	totalIndustrial += vlrConta;
+//            }
             }
         
         // Exibir o resumo final
