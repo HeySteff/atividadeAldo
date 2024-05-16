@@ -17,17 +17,21 @@ public class LocacaoKitnet {
 
 		for (int i = 0; i < 4; i++) {
 			do {
-				System.out.println("Informe qual Kitnet voce deseja alugar: \n A - Para o kitnet A\n B - Para o kitnet B"
+				System.out
+						.println("Informe qual Kitnet voce deseja alugar: \n A - Para o kitnet A\n B - Para o kitnet B"
 								+ "\n C - Para o kitnet C\n D - Para o Kitnet D");
 				kitnet = in.next().charAt(0);
 				kitnet = Character.toUpperCase(kitnet);
 
+				if (kitnet != 'A' && kitnet != 'B' && kitnet != 'C' && kitnet != 'D') {
+					System.out.println("Kitnet informado não existe");
+				}
 			} while (kitnet != 'A' && kitnet != 'B' && kitnet != 'C' && kitnet != 'D');
 
 			do {
 				System.out.println(
 						"O valor da locação é de R$ 1000,00 para até 3 pessoas por kitnet com limite maximo de 6 moradores");
-				System.out.println("Informe a Quantidade de moradores na casa: " + kitnet);
+				System.out.println("Informe a Quantidade de moradores para a casa: " + kitnet);
 				qtdMoradores = in.nextInt();
 
 			} while (qtdMoradores < 0 || qtdMoradores > MAXIMO_MORADORES);
@@ -56,7 +60,7 @@ public class LocacaoKitnet {
 		}
 		vlrMedio = vlrTotal / rentabilidade;
 
-		System.out.printf("Valor total do Aluguel: R$ %.2f\n", vlrTotal);
-		System.out.printf("Valor total do Aluguel: R$ %.2f\n", vlrMedio);
+		System.out.printf("Valor total dos alugueis é de: R$ %.2f\n", vlrTotal);
+		System.out.printf("Valor da média dos alugueis é de: R$ %.2f\n", vlrMedio);
 	}
 }

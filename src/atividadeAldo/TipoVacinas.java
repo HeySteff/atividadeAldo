@@ -30,7 +30,7 @@ public class TipoVacinas {
 			} else if (tipoVacina == 3) {
 				valorRecebido = (quantidadeAplicada / QTDVACINABASE) * VACINA3;
 			}
-			
+
 			System.out.println("valor do repasse " + valorRecebido);
 			System.out.print("------------------------------\n");
 
