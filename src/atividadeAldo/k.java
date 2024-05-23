@@ -2,65 +2,49 @@ package atividadeAldo;
 
 import java.util.Scanner;
 
-public class k{
+public class k {
 
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+	public static void main(String[] args) {
 
-        final double ACRESCIMO = 100;
-        final double VALOR_BASE = 1000;
-        final int MAX_MORADORES = 6;
-        char kitnet;
-        int kitnetsOcupadas = 0;
-		int qtdMoradores = 0;
-        double valorTotalAluguel = 0;
-        double aluguelMedio = 0;
+		Scanner scanner = new Scanner(System.in);
+		String[] siglasValidas = { "SINT", "ENF", "ADS", "PSI" };
+		String[] siglasCursos = new String[5];
 
-        for (int i = 0; i < 4; i++) {
-            do {
-                System.out.println("Informe qual Kitnet você deseja alugar: \n A - Kitnet A\n B - Kitnet B"
-                        + "\n C - Kitnet C\n D - Kitnet D");
-                kitnet = in.next().charAt(0);
-                kitnet = Character.toUpperCase(kitnet);
+		int tecnicos = 0, superiores = 0;
 
-            } while (kitnet != 'A' && kitnet != 'B' && kitnet != 'C' && kitnet != 'D');
+		// Leitura e validação das siglas
+		for (int i = 0; i < 5; i++) {
+			boolean siglaValida;
+			do {
+				System.out.print("Digite a sigla do curso " + (i + 1) + ": ");
+				siglasCursos[i] = scanner.nextLine().toUpperCase();
 
-            do {
-                System.out.println(
-                        "O valor do aluguel é de R$ 1000,00 para até 3 moradores por kitnet com limite máximo de 6 moradores");
-                System.out.println("Informe a Quantidade de moradores na kitnet: " + kitnet);
-                int moradores = in.nextInt();
+				// Verifica se a sigla é válida
+				siglaValida = false;
+				for (String sigla : siglasValidas) {
+					if (sigla.equals(siglasCursos[i])) {
+						siglaValida = true;
+						break;
+					}
+				}
 
-                if (moradores == 0) {
-                    System.out.println("Kitnet " + kitnet + " está desocupada");
-                } else {
-                    double aluguel = VALOR_BASE;
+				if (!siglaValida) {
+					System.out.println("Sigla inválida. Digite novamente.");
+				}
+			} while (!siglaValida); // O laço continua enquanto a sigla for inválida
 
-                    if (moradores > 3) {
-                        int moradoresExcedentes = Math.min(moradores - 3, MAX_MORADORES - 3);
-                        aluguel += moradoresExcedentes * ACRESCIMO;
-                    }
+			// Contagem de cursos técnicos e superiores
+			if (siglasCursos[i].equals("SINT") || siglasCursos[i].equals("ENF")) {
+				tecnicos++;
+			} else {
+				superiores++;
+			}
+		}
 
-                    System.out.println("------------------------");
-                    System.out.println("\nKitnet: " + kitnet);
-                    System.out.println("Quantidade de Moradores: " + moradores);
-                    System.out.printf("Valor do Aluguel: R$ %.2f\n", aluguel);
-                    System.out.println("------------------------");
+		// Exibição dos resultados
+		System.out.println("\nQuantidade de cursos técnicos: " + tecnicos);
+		System.out.println("Quantidade de cursos superiores: " + superiores);
 
-                    valorTotalAluguel += aluguel;
-                    kitnetsOcupadas++;
-                }
-
-            } while (qtdMoradores < 0 || qtdMoradores > MAX_MORADORES);
-        }
-
-        if (kitnetsOcupadas > 0) {
-            aluguelMedio = valorTotalAluguel / kitnetsOcupadas;
-        } else {
-            aluguelMedio = 0;
-        }
-
-        System.out.printf("Valor total do Aluguel: R$ %.2f\n", valorTotalAluguel);
-        System.out.printf("Valor médio do Aluguel: R$ %.2f\n", aluguelMedio);
-    }
+		scanner.close();
+	}
 }
