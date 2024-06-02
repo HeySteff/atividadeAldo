@@ -11,7 +11,7 @@ public class ComparaçãoComMAR {
 		int i, antesMar = 0, igualMar = 0, depoisMar = 0, comparacao;
 
 		for (i = 1; i <= 5; i++) {
-			System.out.print("Informe a palavra " + i +": ");
+			System.out.print("Informe a palavra " + i + ": ");
 			nome = in.nextLine().toUpperCase();
 
 			comparacao = nome.compareTo("MAR");
@@ -29,11 +29,3 @@ public class ComparaçãoComMAR {
 		System.out.println("Quantidade de palavras que sucedem a palavra MAR: " + depoisMar);
 	}
 }
-//Digite a palavra 1: Stefano
-//Digite a palavra 2: Felipe
-//Digite a palavra 3: Matheus
-//Digite a palavra 4: Marcelo
-//Digite a palavra 5: Amanda
-//Quantidade de palavras que precedem MAR: 2
-//Quantidade de palavras que coincidem com MAR: 0
-//Quantidade de palavras que sucedem MAR: 3
