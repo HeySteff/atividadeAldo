@@ -7,7 +7,7 @@ public class Validacao_De_Matricula {
 	public static void main(String[] args) {
 
 		Scanner in = new Scanner(System.in);
-		String matricula, ano, matriculaAluno, anoAluno, nomeCurso, curso;
+		String matricula, matriculaAluno, anoAluno, nomeCurso, curso;
 		char semestre;
 
 		do {
@@ -43,7 +43,6 @@ public class Validacao_De_Matricula {
 		} else if (curso.equals("C")) {
 			nomeCurso = "Nutrição";
 		} else {
-//			throw new IllegalStateException("Curso inválido: " + curso); // Exceção para garantir consistência
 			return;
 		}
 		matriculaAluno = matricula.substring(8);
